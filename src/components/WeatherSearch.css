@@ -1,0 +1,44 @@
+body * {
+  transition: ease 0.2s all;
+}
+.container {
+  border: solid black 1px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+h1 {
+  margin: 8px;
+}
+h4 {
+  margin: 0 0 5px 0;
+}
+input {
+  font-size: 1em;
+  width: 350px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+input:focus {
+  background-color: rgba(0,0,0,0.15);
+}
+.results {
+  font-size: 1.2em;
+  border: rgba(0,0,0,0.05);
+  width: 350px;
+  box-sizing: border-box;
+  border-top: none;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.result {
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.result:hover {
+  background-color: rgba(0,0,0,0.08);
+}

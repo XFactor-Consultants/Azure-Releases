@@ -1,0 +1,15 @@
+.weatherReport {
+  background-color: rgb(240,240,240);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.temp {
+  font-size: 3em;
+}
+.info {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
