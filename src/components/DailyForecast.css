@@ -1,0 +1,9 @@
+.daily {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.day {
+  display: flex;
+  flex-direction: column;
+}

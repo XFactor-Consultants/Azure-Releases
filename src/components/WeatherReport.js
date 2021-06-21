@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { fetchWeather } from "../utils/api";
+import DailyForecast from "./DailyForecast";
 import Loading from "./Loading";
 import "./WeatherReport.css";
 
 const WeatherReport = ({ result }) => {
   const [data, setData] = useState(null);
+  console.log("report", data);
   useEffect(() => {
     fetchWeather(result.lat, result.lon).then(setData);
   }, [result]);
@@ -18,6 +20,7 @@ const WeatherReport = ({ result }) => {
         <div>Currently: {data.current.weather[0].description}</div>
         <div>Wind: {data.current.wind_speed} MPH</div>
       </div>
+      {/* <DailyForecast {...data} /> */}
     </div>
   );
 };
