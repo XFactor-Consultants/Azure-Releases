@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchWeather } from "../utils/api";
 import DailyForecast from "./DailyForecast";
+import HourlyForecast from "./HourlyForecast";
 import Loading from "./Loading";
 import "./WeatherReport.css";
 
@@ -21,6 +22,7 @@ const WeatherReport = ({ result }) => {
         <div>Wind: {data.current.wind_speed} MPH</div>
       </div>
       {/* <DailyForecast {...data} /> */}
+      <HourlyForecast {...data} />
     </div>
   );
 };

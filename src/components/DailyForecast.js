@@ -11,7 +11,7 @@ const DailyForecast = ({ daily }) => (
             ]
           }
         </strong>
-        <span>{day.feels_like.day}</span>
+        <span>{day.feels_like.day}°</span>
       </div>
     ))}
   </div>
