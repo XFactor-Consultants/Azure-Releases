@@ -15,7 +15,7 @@ export const fetchWeather = async (lat, lon) => {
 };
 
 export const search = async (q) => {
-  const base = new URL("http://api.openweathermap.org/geo/1.0/direct?");
+  const base = new URL("https://api.openweathermap.org/geo/1.0/direct?");
   const resp = await fetch(
     `${base}${new URLSearchParams({
       q,
