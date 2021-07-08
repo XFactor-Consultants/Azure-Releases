@@ -6,7 +6,7 @@ const DailyForecast = ({ daily }) => (
       <div className="day" key={day.dt}>
         <strong>
           {
-            ["Sun", "Mon", "Tues", "Weds", "Thu", "Fri", "sat"][
+            ["Sun", "Mon", "Tues", "Weds", "Thu", "Fri", "Sat"][
               new Date(day.dt * 1000).getDay()
             ]
           }

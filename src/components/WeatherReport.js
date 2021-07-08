@@ -4,12 +4,24 @@ import DailyForecast from "./DailyForecast";
 import HourlyForecast from "./HourlyForecast";
 import Loading from "./Loading";
 import "./WeatherReport.css";
+import { AppConfigurationClient } from "@azure/app-configuration";
+
+const client = new AppConfigurationClient(
+  "Endpoint=https://weatherapp-featureflag.azconfig.io;Id=+XiI-l4-s0:FtWFuHd83stOMp0BZVoH;Secret=gwLXbi/wtjUg5nyTo3GXY0p9Z4/lFPNvJPFuZHhW7g4="
+);
 
 const WeatherReport = ({ result }) => {
   const [data, setData] = useState(null);
-  console.log("report", data);
+  const [hourlyEnabled, setHourlyEnabled] = useState(false);
   useEffect(() => {
     fetchWeather(result.lat, result.lon).then(setData);
+    client
+      .getConfigurationSetting({
+        key: ".appconfig.featureflag/Hourly",
+      })
+      .then((data) => {
+        setHourlyEnabled(JSON.parse(data.value).enabled);
+      });
   }, [result]);
   if (!data) {
     return <Loading />;
@@ -21,8 +33,8 @@ const WeatherReport = ({ result }) => {
         <div>Currently: {data.current.weather[0].description}</div>
         <div>Wind: {data.current.wind_speed} MPH</div>
       </div>
-      {/* <DailyForecast {...data} /> */}
-      <HourlyForecast {...data} />
+      <DailyForecast {...data} />
+      {hourlyEnabled && <HourlyForecast {...data} />}
     </div>
   );
 };
