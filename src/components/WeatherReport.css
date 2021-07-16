@@ -1,5 +1,9 @@
 .weatherReport {
   background-color: rgb(240,240,240);
+  /* background-color: rgb(39, 39, 39);
+  color: white; */
+  /* background-color: rgb(34, 65, 73);
+  color: rgb(167, 166, 255); */
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
